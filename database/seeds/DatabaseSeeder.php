@@ -1,16 +1,16 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Course;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
     public function run()
     {
-        // $this->call(UserSeeder::class);
+        $this->call(GroupSeeder::class);
+        $this->call(UserSeeder::class);
+        $this->call(MaterialSeeder::class);
+
+        factory(Course::class, 100)->create();
     }
 }
